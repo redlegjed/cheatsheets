@@ -4,6 +4,12 @@ Git cheatsheet
 Good tutorial: https://www.atlassian.com/git/tutorials/what-is-git
 (Have to sit down and read it carefully though, not a quick reference)
 
+Getting a Git repository from GitHub
+-------------------------------------
+
+	git clone https://github.com/redlegjed/cheatsheets.git
+
+
 Branches
 ------------
 
