@@ -7,7 +7,8 @@ Good tutorial: https://www.atlassian.com/git/tutorials/what-is-git
 Getting a Git repository from GitHub
 -------------------------------------
 
-	git clone https://github.com/redlegjed/cheatsheets.git
+    git clone https://github.com/redlegjed/cheatsheets.git
+
 
 
 Branches
@@ -29,6 +30,7 @@ Branches
 
 
     git add <filename>                <-- Add file to the branch selected by 'git checkout'
+    git add --all                     <-- Add all files to branch
     git commit -m "put message here"  <--  Commit files to local branch selected by 'git checkout'
 
 
@@ -36,7 +38,7 @@ Branches
 
 
     git checkout <branch name>   <-- Select the branch to be updated
-    git pull --rebase origin     <-- Update branch from remote repository
+    git pull --rebase origin     <-- Update branch from remote repository 
 
 
 Updating from a specific branch in the remote repository:
@@ -70,6 +72,10 @@ Note: In Git, rebasing means putting all the changes of the current branch after
     git push origin --delete <branch_name>    <-- Delete remote branch
     git branch -d <branch_name>               <-- Delete local branch
     git branch -D <branch_name>               <-- Delete local branch even if not merged
+
+Cleanup checked out repositories, i.e. remove the deleted branch from any other copies of the repository that you have.
+
+    git fetch --all --prune
     
     
 * Branch prefixes used by bitbucket
@@ -127,6 +133,11 @@ Create tag
     git tag -a "Rel_00.02.05"                    <-- Opens editor for message
     
     
+Remove tag
+
+    git tag -d <tag text>
+    
+    
 Show message for a tag
 
     git tag show <tag text>
@@ -152,6 +163,9 @@ This may work as well, when pulling a branch from a remote repository
 
     git pull --tags origin branch_name
 
+Show differences between tags
+
+    git diff tag1 tag2
 
 
 Removing files
@@ -238,13 +252,32 @@ directly connected:
 http://schacon.github.io/git/git-bundle.html
 https://git-scm.com/blog/2010/03/10/bundles.html
 
-Alternatively use bundles
+Alternative using bundles
 
-	git bundle create repo.bundle master    <-- Create a single file from repo called repo.bundle
+Bundle up a repository
+
+    git bundle create <name of bundle file> <branch name>
+    git bundle create repo1.bundle master
+
+Go to other version of repository (repo2)
+
+Verify the bundle (assume it's outside the current directory at ../)
+
+    git bundle verify ../repo1.bundle
+
+Read commits from bundle into current repo as a new branch
+
+    git fetch ../repo1.bundle master:temporary_branch
+
+Merge commits from bundle into master branch
+
+    git merge temporary_branch
+
+
     
 
 Troubleshooting
 ==========================
 
-* Unlink of file 'Configuration/Specs/Calibration/ACO_make_alpha_spec.xlsx' failed. Should I try again? (y/n) 
+* Unlink of file 'spec.xlsx' failed. Should I try again? (y/n) 
     - This probably means there is an Excel process with the file open somewhere in the background. Solution is to find the Excel and close it. Don't commit until Excel has released the file.
