@@ -274,6 +274,20 @@ Merge commits from bundle into master branch
     git merge temporary_branch
 
 
+Stashing
+============
+
+Temporarily store your working directory
+
+    git stash
+    
+Re-apply stashed changes
+    
+    git stash apply
+    
+Get list of stashes
+
+    git stash list
     
 
 Troubleshooting
