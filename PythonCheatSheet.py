@@ -1,11 +1,7 @@
 """ Python cheat sheet
         - A collection of python code snippets
         
-%% Version
-% $Author:: John Bainbridge (3118015)               $ : Last Author
-% $Date:: 2015-04-22 11:42:58 -0400 (Wed, 22 Apr 20#$ : Last change
-% $ID::                                             $ : 
-% $Revision:: 21095                                 $ : Last revision
+
 """
 
 #============================================================================
@@ -539,6 +535,20 @@ dt = timedelta(weeks=1,minutes=3)
 # Converting output of os.stat() to readable format
 # the index '-2' is picking out gives the time modified
 time.strftime('%d/%m/%Y %H:%M:%S', time.localtime(os.stat(some_filename).st_mtime))
+
+
+#============================================================================
+#%% timeit library
+#============================================================================
+
+import timeit
+
+# Time a stand alone snippet of code
+timeit.timeit("max(range(20))",number=100)
+
+# Time a snippet that uses the global namespace
+timeit.timeit("[n for n in a_global_variable]",number=100,globals=globals())
+
 
 #============================================================================
 #%% Exceptions
