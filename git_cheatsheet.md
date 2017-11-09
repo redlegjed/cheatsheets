@@ -78,6 +78,11 @@ Cleanup checked out repositories, i.e. remove the deleted branch from any other 
     git fetch --all --prune
     
     
+* Showing differences between the same file in different branches
+
+    git diff branch1:file branch2:file
+    
+    
 * Branch prefixes used by bitbucket
     - bugfix
     - feature
