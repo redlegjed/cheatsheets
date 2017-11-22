@@ -82,6 +82,10 @@ Cleanup checked out repositories, i.e. remove the deleted branch from any other 
 
     git diff branch1:file branch2:file
     
+* Checking out a file from a different branch into the current branch
+
+	git checkout different_branch -- path_to_/filename.ext
+
     
 * Branch prefixes used by bitbucket
     - bugfix
