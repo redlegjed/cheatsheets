@@ -82,6 +82,10 @@ Cleanup checked out repositories, i.e. remove the deleted branch from any other 
 
     git diff branch1:file branch2:file
     
+* Checking out a file from a different branch into the current branch
+
+	git checkout different_branch -- path_to_/filename.ext
+
     
 * Branch prefixes used by bitbucket
     - bugfix
@@ -90,6 +94,12 @@ Cleanup checked out repositories, i.e. remove the deleted branch from any other 
     - release
     
 See https://confluence.atlassian.com/bitbucketserver0414/using-branches-in-bitbucket-server-895367626.html?utm_campaign=in-app-help&utm_medium=in-app-help&utm_source=stash
+
+* Tracking branches : branches that automatically track a remote branch
+
+
+    git checkout --track origin/a_branch
+
 
 
 Viewing changes
@@ -171,6 +181,24 @@ This may work as well, when pulling a branch from a remote repository
 Show differences between tags
 
     git diff tag1 tag2
+    
+    
+Differences
+--------------
+
+View differences between the same file for two different tags
+
+    git diff tag1 tag2 -- file.txt
+    
+The same can be done for branches
+
+    git diff branch1 branch2 -- file.txt
+    
+Differences between two different files
+
+    git diff <revision_1>:<file_1> <revision_2>:<file_2>
+    
+Where a revision can be a branch,tag, SHA hex number etc
 
 
 Removing files
@@ -210,6 +238,11 @@ This shows the abbreviated SHA-1 code, author, when committed and the message
 Ascii graph
 
     git log --pretty=format:"%h %s" --graph
+
+
+Show what changed in a particular commit
+
+    git show --name-status <commit>.
 
 
 see https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
