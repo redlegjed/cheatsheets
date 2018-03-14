@@ -155,8 +155,8 @@ Remove tag
     
 Show message for a tag
 
-    git tag show <tag text>
-    git tag show "Rel_00.02.05"
+    git show <tag text>
+    git show "Rel_00.02.05"
     
 Tags don't get pushed to the remote repository automatically. They have to be pushed:
 
@@ -199,6 +199,19 @@ Differences between two different files
     git diff <revision_1>:<file_1> <revision_2>:<file_2>
     
 Where a revision can be a branch,tag, SHA hex number etc
+
+
+View which files have changes between 2 branches
+
+    git diff --name-status branch1..branch2 
+    
+    Can also send to a text file
+    
+    git diff --name-status branch1..branch2 > logfile.txt
+    
+    Colourfull version
+    
+    git diff --stat --color branch1..branch2
 
 
 Removing files

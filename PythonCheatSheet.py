@@ -217,6 +217,10 @@ a = np.zeros((3,),dtype=[('x',float),('y',int),('z',str)])
 # Create a column vector
 # literally put newaxis in, it's not a variable
 x = np.arange(0,10)[:,np.newaxis]
+
+# Convert scalar to array
+x = 4.3
+x = np.atleast_1d(x)  # Convert to array with at least one dimension
  
  # Random integers
  # 0 - 9
