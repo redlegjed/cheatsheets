@@ -3,6 +3,11 @@ Raspberry Pi cheatsheet
 
 A collection of useful tips for R-Pi
 
+GPIO pin overlay
+-----------------
+
+(Link to github site)[https://github.com/splitbrain/rpibplusleaf]
+
 
 SPI interface
 ------------------
