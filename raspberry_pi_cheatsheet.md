@@ -59,4 +59,7 @@ From Python using spidev library
     # Close connection
     spi.close()
 
+Raspberry Pi SPI info
 
+    [https://www.raspberrypi.org/documentation/hardware/raspberrypi/spi/README.md]
+    
