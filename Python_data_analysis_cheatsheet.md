@@ -14,6 +14,10 @@ Basic plotting
     from matplotlib import pyplot as plt
     import numpy as np
 
+    # Dark theme
+    plt.style.use('dark_background')
+
+
     fpath = 'data.csv'
     data = np.recfromcsv(fpath, delimiter='\t')
 
