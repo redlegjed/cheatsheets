@@ -340,6 +340,88 @@ Get list of stashes
 
     git stash list
     
+    
+    
+    
+Sub modules
+==================
+
+Reference [https://git-scm.com/book/en/v2/Git-Tools-Submodules]
+
+Adding another repository as a folder in the current repo
+
+    git submodule add https://github.com/chaconinc/DbConnector
+    
+This adds a .gitmodules file into the repo
+
+Have to commit both the .gitmodules file and the submodule folder.
+
+
+Cloning a repo with sub modules, add --recurse-submodules options
+
+    git clone --recurse-submodules https://github.com/chaconinc/MainProject
+    
+
+Updating a submodule
+
+Go into sub module directory and use git fetch followed by git merge
+
+    git fetch
+    git merge origin/master
+
+
+To see changes from merge
+
+    git diff --submodule 
+    
+or
+    git status
+    
+Update submodule directory 
+
+    git submodule update --remote <submodule directory name>
+    
+(updates from origin/master branch by default)
+
+    
+Set submodule branch to update from
+
+    git config -f .gitmodules submodule.<submodule folder>.branch <submodule branch name>
+    
+This just adds a line to the .gitmodules file with the branch name.
+
+
+Making changes to submodule
+
+* Need to checkout a branch
+* Specify whether to merge or rebase updates from submodule origin
+
+Checkout a branch by going into the submodule directory and checking out a branch
+
+    cd submodule_dir 
+    git checkout master
+    
+Update from submodule origin using merge
+    git submodule update --remote --merge
+
+
+Update from submodule origin using rebase
+    git submodule update --remote --rebase
+    
+    
+Making git check if submodules have been pushed before a commit
+
+    git push --recurse-submodules=check
+    
+Make this the default action by setting the configuration
+
+    git config push.recurseSubmodules check
+
+    
+Committing changes to submodule
+
+Just go into submodule directory and do the normal add/commit cycle. BUT a local branch must have been checked out!!
+    
 
 Troubleshooting
 ==========================
