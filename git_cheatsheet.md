@@ -57,6 +57,13 @@ Note: In Git, rebasing means putting all the changes of the current branch after
     git checkout master               <-- Select the master branch
     git merge new_branch              <-- Merge changes from new_branch in master
     git branch -d new_branch          <-- Delete new branch if required
+    
+* Rebasing from a local branch    
+    git checkout old_branch        <-- Select the branch to be rebased
+    git rebase master              <-- rebase old_branch relative to master branch
+    
+    git rebase --abort            <-- If it all goes wrong, back up using this
+
 
 
 * Pushing changes back to origin repository
@@ -340,6 +347,18 @@ Get list of stashes
 
     git stash list
     
+    
+Removing files that were committed but are now ignored
+=========================================================
+
+For single files
+
+    git rm --cached <file>
+    
+To apply .gitignore to everything
+
+    git rm -r --cached . 
+    git add .
     
     
     
