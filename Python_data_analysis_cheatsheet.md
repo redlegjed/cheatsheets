@@ -150,6 +150,8 @@ Example of plotting 3 curves
 
     %%output size=150 # Set output to 150% of normal size
     %%opts Curve  [height=300 width=600, show_grid=True, tools=['hover']] # plot options
+    
+    # data is a pandas dataframe with 3 columns: Timestamp, freezer, freezer_wall
 
     freezer  = hv.Curve( data, ('Timestamp'), ('freezer','Temperature [degC]'),label='Freezer')
     wall  = hv.Curve( data, ('Timestamp'), ('freezer_wall','Temperature [degC]'),label='Freezer wall')
@@ -158,6 +160,20 @@ Example of plotting 3 curves
     # Make the plot with 3 curves
     freezer*wall*ambient
     
+    
+Example of plotting arrays
+
+Here two arrays: x and y are used. They are referred to as 'x' and 'y', but the axis labels are 'x axis' and 'y axis'
+
+    def f(x):
+        return (x - 2) * x * (x + 2)**2
+
+    x = np.linspace(-3,3)
+    y = f(x)
+
+    fx = hv.Curve((x, y), ('x','x axis'), ('y','y axis'))
+
+    fx
     
 
 Using FFT
