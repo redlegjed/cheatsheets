@@ -65,6 +65,10 @@ Note: In Git, rebasing means putting all the changes of the current branch after
     git rebase --abort            <-- If it all goes wrong, back up using this
 
 
+* Conflicts
+    git checkout --ours PATH/FILE       <-- Select version of FILE from this branch
+    git checkout --theirs PATH/FILE     <-- Select version of FILE from branch that has been merged in
+    
 
 * Pushing changes back to origin repository
 

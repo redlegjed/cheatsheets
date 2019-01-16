@@ -27,3 +27,10 @@ Run HP setup which is a GUI which can search for printers on USB or network
     hp-setup
     
 
+Bash up arrow history
+-----------------------
+
+Put this in .bashrc file to enable up arrow completion from history
+
+        bind '"\e[A": history-search-backward'
+        bind '"\e[B": history-search-forward'
