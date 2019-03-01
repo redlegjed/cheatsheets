@@ -446,6 +446,23 @@ Committing changes to submodule
 Just go into submodule directory and do the normal add/commit cycle. BUT a local branch must have been checked out!!
     
 
+    
+Linux shell customisations
+============================
+
+Put the git branch on the command prompt. Put this code in .bashrc file
+
+    # Git branch on prompt
+    # =======================
+    parse_git_branch(){
+    git branch 2>/dev/null|sed -e '/^[^*]/d' -e 's/*\(.*\)/(\1)/'
+    }
+    PS1="\w\$(parse_git_branch) $"
+
+
+    
+    
+    
 Troubleshooting
 ==========================
 
