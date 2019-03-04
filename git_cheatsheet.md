@@ -234,6 +234,10 @@ Remove file from staging area and the working directory, i.e. delete the file
 Remove file from staging area but keep it in the working directory
 
     git rm --cached README
+    
+Remove directory
+
+    git rm -r directory_name
 
 
 Renaming files
