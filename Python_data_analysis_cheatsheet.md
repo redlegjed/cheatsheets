@@ -175,6 +175,27 @@ Here two arrays: x and y are used. They are referred to as 'x' and 'y', but the 
 
     fx
     
+    
+Example of overlaying multiple plots and setting figure size & other properties
+
+    def f(x):
+            return (x - 2) * x * (x + 2)**2
+
+    x = np.linspace(-3,3)
+    y1 = f(x)
+    y2 = f(x) +2
+
+    fx1 = hv.Curve((x, y1), ('x','x axis'), ('y','y axis'),label='y1')
+    fx2 = hv.Curve((x, y2), ('x','x axis'), ('y','y axis'),label='y2')
+
+    layout = fx1*fx2
+
+    # Set size of figure, legend position, grid etc as options
+    layout.opts(
+        hv.opts.Curve( height=400, width=600, line_width=1.50, show_grid=True,tools=['hover']),
+        hv.opts.Overlay(legend_position='top_left')
+    )
+    
 
 Using FFT
 -----------
