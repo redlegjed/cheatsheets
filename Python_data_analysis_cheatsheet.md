@@ -176,6 +176,7 @@ Here two arrays: x and y are used. They are referred to as 'x' and 'y', but the 
     fx
     
     
+<<<<<<< HEAD
 Example of overlaying multiple plots and setting figure size & other properties
 
     def f(x):
@@ -195,6 +196,21 @@ Example of overlaying multiple plots and setting figure size & other properties
         hv.opts.Curve( height=400, width=600, line_width=1.50, show_grid=True,tools=['hover']),
         hv.opts.Overlay(legend_position='top_left')
     )
+=======
+Scatter plot specifying  marker, marker size, plot height & width, tools and y range. Assumes data source is a dataframe with columns 'x' and 'y'
+    
+    # Define scatter options
+    # - marker is square shaped ('s')
+    scatter_opts = hv.Options('Scatter',height=400, width=1000, tools=['hover'],size=5,marker='s')
+    
+    # Define y-axis to be from 0 to 10
+    y_dim = hv.Dimension('y', label='Y values', range=(0,10))
+    
+    # Create plot 
+    scatter_plot = hv.Scatter( df, ('x'), y_dim,label='My curve' ) 
+    scatter_plot.opts(scatter_opts)
+    
+>>>>>>> faaabb17b36ae7f836d9dfd27804de9ecdfa4486
     
 
 Using FFT
@@ -266,3 +282,13 @@ Taking FFT of a cosine wave:
 
 
     plt.show()
+
+    
+    
+Pandas
+----------
+
+
+Convert column to datetime object: If dates are in a column as strings/object
+
+    df['date'] = pd.to_datetime(df['date'])
