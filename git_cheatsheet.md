@@ -472,3 +472,13 @@ Troubleshooting
 
 * Unlink of file 'spec.xlsx' failed. Should I try again? (y/n) 
     - This probably means there is an Excel process with the file open somewhere in the background. Solution is to find the Excel and close it. Don't commit until Excel has released the file.
+    
+* Line endings
+    On linux: git config --global core.autocrlf input
+    On windows :  git config --global core.autocrlf true
+
+Finding a string across all branches
+
+    git grep "string or regexp" $(git rev-list --all)
+    
+    
