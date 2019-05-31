@@ -45,6 +45,10 @@ Updating from a specific branch in the remote repository:
     
     git pull --rebase origin develop   <-- Update from the branch 'develop' in the 'origin' repository
     
+Abort rebase
+
+    git rebase --abort
+    
 Updating from a branch in the remote repository that does not exist in the local repository
 
     git checkout --track origin/branch_name  <-- Creates a new branch "branch_name" in local repo that tracks "branch_name" from remote repo
