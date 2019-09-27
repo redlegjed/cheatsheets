@@ -1,17 +1,21 @@
 Setting up VS code for Python
 ===============================
 
+Setting up VS code to behave in a similar manner to the Spyder IDE
+
+
 Installation of extra extensions
 ----------------------------------
 
 * Install standard Microsoft Python extension
-* Install Codemap for decent outline
+* Install Codemap by Oleg Shilo for decent outline
+* Install autoDocstring by Nils Werner - automatically inserts a docstring template after """
 
 
 Codemap customisation
 -----------------------
 
-To get Codemap to work in a similar manner to Spyder add the following to the settings:
+To get Codemap to work in a similar manner to Spyder's outline add the following to the settings:
 
 
 ```javascript
@@ -43,6 +47,11 @@ To get Codemap to work in a similar manner to Spyder add the following to the se
 
 This makes Codemap recognise "#%%" blocks as well as classes and functions.
 
+
+Run Python Interactive Console
+-------------------------------
+
+CTRL+Shift+P -> Python Show Interactive window
 
 
 Running startup code in Python Interactive Console
