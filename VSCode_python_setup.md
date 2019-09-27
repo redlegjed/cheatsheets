@@ -13,7 +13,8 @@ Codemap customisation
 
 To get Codemap to work in a similar manner to Spyder add the following to the settings:
 
-``
+
+```javascript
     // Codemap customisation
     "codemap.py": [
         {
@@ -38,7 +39,7 @@ To get Codemap to work in a similar manner to Spyder add the following to the se
         }
       ],
 
-``
+```
 
 This makes Codemap recognise "#%%" blocks as well as classes and functions.
 
@@ -49,10 +50,11 @@ Running startup code in Python Interactive Console
 
 In user or workspace settings either add this:
 
-``
+
+```javascript
 "python.dataScience.runMagicCommands": "print('Runs at startup')",
 
-``
+```
 
 Replacing the print statement with any Python code you want, e.g. "import set_paths".
 
