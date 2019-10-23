@@ -342,6 +342,16 @@ Read commits from bundle into current repo as a new branch
 Merge commits from bundle into master branch
 
     git merge temporary_branch
+    
+Create a repository from a bundle
+
+    git clone <name of bundle file> <name of repo folder>
+    git clone repo.bundle repo
+    
+This seems to create an empty repository so you need to fetch the bundle in order to populate it
+
+    git fetch ../repo1.bundle master:temporary_branch
+
 
 
 Stashing

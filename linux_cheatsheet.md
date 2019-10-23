@@ -34,3 +34,9 @@ Put this in .bashrc file to enable up arrow completion from history
 
         bind '"\e[A": history-search-backward'
         bind '"\e[B": history-search-forward'
+
+        
+Mount SMB drive
+-------------------
+
+    sudo mount -t cifs -o username=pi //192.168.1.100/PISERVER_USB_32G/shared/ mount
