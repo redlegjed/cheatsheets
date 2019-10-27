@@ -1,16 +1,23 @@
-Raspberry Pi cheatsheet
-==========================
+# Raspberry Pi cheatsheet
+
 
 A collection of useful tips for R-Pi
 
-GPIO pin overlay
------------------
+- [Raspberry Pi cheatsheet](#raspberry-pi-cheatsheet)
+  - [GPIO pin overlay](#gpio-pin-overlay)
+  - [SPI interface](#spi-interface)
+  - [Automatically start programs on boot](#automatically-start-programs-on-boot)
+    - [Step 1– Create A Unit File](#step-1-create-a-unit-file)
+    - [Step 2 – Configure systemd](#step-2--configure-systemd)
+
+## GPIO pin overlay
+
 
 (Link to github site)[https://github.com/splitbrain/rpibplusleaf]
 
 
-SPI interface
-------------------
+## SPI interface
+
 
 From Python using spidev library
 
@@ -59,7 +66,52 @@ From Python using spidev library
     # Close connection
     spi.close()
 
-Raspberry Pi SPI info
-
-    [https://www.raspberrypi.org/documentation/hardware/raspberrypi/spi/README.md]
+Link to (Raspberry Pi SPI info)[https://www.raspberrypi.org/documentation/hardware/raspberrypi/spi/README.md]
     
+
+## Automatically start programs on boot
+
+
+See (Dexter Industries help)[https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/]
+
+The preferred method is to use *systemd*
+
+### Step 1– Create A Unit File
+
+Open a sample unit file using the command as shown below:
+
+
+    sudo nano /lib/systemd/system/sample.service
+
+Add in the following text :
+
+    [Unit]
+    Description=My Sample Service
+    After=multi-user.target
+
+    [Service]
+    Type=idle
+    ExecStart=/usr/bin/python /home/pi/sample.py
+
+    [Install]
+    WantedBy=multi-user.target
+
+
+The permission on the unit file needs to be set to 644 :
+
+    sudo chmod 644 /lib/systemd/system/sample.service
+
+### Step 2 – Configure systemd
+
+Now the unit file has been defined we can tell systemd to start it during the boot sequence :
+
+    sudo systemctl daemon-reload
+    sudo systemctl enable sample.service
+
+Reboot the Pi and your custom service should run:
+
+    sudo reboot
+
+Check the status of the service using
+
+    sudo systemctl status sample.service
