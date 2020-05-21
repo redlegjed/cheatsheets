@@ -295,6 +295,14 @@ This stuff lives in the file
 
     
     
+Tracing changes
+===================
+
+Show all the commits where a particular file changes
+
+    git log --follow -- filename
+    
+    
 Updating from another local repository
 ========================================
 
