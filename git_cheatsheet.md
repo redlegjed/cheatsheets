@@ -143,6 +143,14 @@ To see what changes you have just staged (after a 'git add') use:
     
     git diff --staged
     
+Adding everything in a folder recursively
+
+    git add folder\\
+    
+Adding specific files in a folder
+
+    git add folder\\*.py
+    
     
 Tagging
 -----------
