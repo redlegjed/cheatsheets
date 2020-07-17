@@ -13,6 +13,11 @@ A collection of useful tips for R-Pi
   - [Useful links](#useful-links)
   - [Log of terminal commands](#log-of-terminal-commands)
 
+## Get Raspbian version
+
+    cat /etc/os-release
+    
+  
 ## GPIO pin overlay
 
 
