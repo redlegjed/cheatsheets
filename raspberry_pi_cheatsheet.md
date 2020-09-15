@@ -122,7 +122,7 @@ Reboot the Pi and your custom service should run:
 
 Check the status of the service using
 
-    sudo systemctl status sample.service
+    sudo systemctl status sample.serviceq
 
 
 ## Setting up wireless Access Point or Hotspot

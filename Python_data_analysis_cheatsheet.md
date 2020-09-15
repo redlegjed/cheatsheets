@@ -5,8 +5,8 @@ A collection of python snippets for analysing and plotting data
 
 
 
-Matplotlib plotting
----------------------
+# Matplotlib plotting
+
 
 Basic plotting
 
@@ -73,8 +73,8 @@ Customising the plot style
     
     
     
-Bokeh plotting
-------------------
+# Bokeh plotting
+
 
 Basic bokeh
 
@@ -102,47 +102,16 @@ Basic bokeh
 
     
     
-Holoviews
------------------
+# Holoviews
+
 
 Basic setup and theming
 
+    
+    import hvplot.pandas
     import holoviews as hv
-
-    hv.extension('bokeh', 'matplotlib')
-
-    from bokeh.themes.theme import Theme
-
-    theme = Theme(
-        json={
-    'attrs' : {
-        'Figure' : {
-            'background_fill_color': '#2F2F2F',
-            'border_fill_color': '#2F2F2F',
-            'outline_line_color': '#444444',
-        },
-        'Grid': {
-            'grid_line_dash': [6, 4],
-            'grid_line_alpha': .3,
-        },
-        
-        'Axis': {
-            'major_label_text_color': 'white',
-            'axis_label_text_color': 'white',
-            'major_tick_line_color': 'white',
-            'minor_tick_line_color': 'white',
-            'axis_line_color': "white"
-        },
-        'Legend':{
-            'background_fill_color': 'black',
-            'background_fill_alpha': 0.5,
-            'location' : "center_right",
-            'label_text_color': "white"
-        }
-    }
-    })
-
-    hv.renderer('bokeh').theme = theme
+    from bokeh.themes import built_in_themes
+    hv.renderer('bokeh').theme = built_in_themes['dark_minimal']
 
     
     
@@ -191,8 +160,8 @@ Scatter plot specifying  marker, marker size, plot height & width, tools and y r
     
     
 
-Using FFT
------------
+# Using FFT
+
 
 Taking FFT of a cosine wave:
 
@@ -263,10 +232,26 @@ Taking FFT of a cosine wave:
 
     
     
-Pandas
-----------
+# Pandas
+-
 
 
 Convert column to datetime object: If dates are in a column as strings/object
 
     df['date'] = pd.to_datetime(df['date'])
+    
+
+## SettingWithCopy Warning
+
+This warning comes up when you have a statement like this:
+
+    df.loc[label1][col1] = 3
+    
+It is better to use .loc for the complete assignment like this:
+
+    df.loc[label1,col1] = 3
+    
+See 
+https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+

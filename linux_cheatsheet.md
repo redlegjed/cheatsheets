@@ -1,6 +1,11 @@
 Linux cheatsheets
 ====================
 
+Remove directory and all files in it
+----------------------------------------
+
+    rm -r dir_name
+
 
 Adding HP printers
 ---------------------

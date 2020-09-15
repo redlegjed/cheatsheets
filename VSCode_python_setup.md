@@ -70,5 +70,22 @@ Replacing the print statement with any Python code you want, e.g. "import set_pa
 Or find the "python.dataScience.runMagicCommands" in the settings GUI and put the code in there.
 
 
+Snippets
+----------
 
+```javascript
+
+"Long double line":{
+		"scope": "python,matlab",
+		"prefix": "dline",
+		"body": "======================================================"
+	},
+	"Long single line":{
+		"scope": "python,matlab",
+		"prefix": "sline",
+		"body": "-------------------------------------------------------"
+	}
+	
+	
+```
 

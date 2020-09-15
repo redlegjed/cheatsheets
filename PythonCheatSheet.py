@@ -568,11 +568,18 @@ timeit.timeit("[n for n in a_global_variable]",number=100,globals=globals())
 #============================================================================
 
 # Example of how to get error message from exception
-def catch():
-     try:
-         raise BaseException()
-     except Exception as e:
-         print( e.message, e.args)
+
+def make_error():
+    assert False==True,'This is the error message'
+
+
+try:
+    make_error()
+except Exception as err:
+    print('Error message [%s]' % str(err))
+    
+    
+
 
 #============================================================================
 #%% zip files
