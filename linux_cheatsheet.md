@@ -44,4 +44,4 @@ Put this in .bashrc file to enable up arrow completion from history
 Mount SMB drive
 -------------------
 
-    sudo mount -t cifs -o username=pi //192.168.1.100/PISERVER_USB_32G/shared/ mount
+    sudo mount -t cifs -o username=pi //192.168.1.199/naspath/ mount
