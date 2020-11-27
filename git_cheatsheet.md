@@ -32,6 +32,11 @@ Branches
     git add <filename>                <-- Add file to the branch selected by 'git checkout'
     git add --all                     <-- Add all files to branch
     git commit -m "put message here"  <--  Commit files to local branch selected by 'git checkout'
+    
+* Get remote branch into local checkout
+
+    git fetch origin <branch name>
+    git checkout <branch name>
 
 
 * Rebasing branch to remote/master repository
@@ -478,8 +483,16 @@ Make this the default action by setting the configuration
 Committing changes to submodule
 
 Just go into submodule directory and do the normal add/commit cycle. BUT a local branch must have been checked out!!
-    
 
+Changing origin
+================
+
+    git remote set-url origin new.git.url/here
+    git remote set-url origin http://192.168.1.101:3000/john/sensehat_punchbag.git
+
+Update
+
+    git push -u origin master
     
 Linux shell customisations
 ============================

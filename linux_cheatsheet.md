@@ -45,3 +45,29 @@ Mount SMB drive
 -------------------
 
     sudo mount -t cifs -o username=pi //192.168.1.100/PISERVER_USB_32G/shared/ mount
+
+    
+Systemctl
+----------
+
+List all services 
+
+    systemctl list-units --type=service
+    
+List all services running
+
+    systemctl list-units --type=service --state=running 
+    
+List all services that will start up automatically
+
+    systemctl list-unit-files --state=enabled
+    
+List services that are disabled
+
+    systemctl list-unit-files --state=disabled
+    
+Status of a service e.g. cups
+
+    systemctl status cups.service
+    
+    

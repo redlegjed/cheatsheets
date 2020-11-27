@@ -76,6 +76,11 @@ From Python using spidev library
 
 Link to [Raspberry Pi SPI info](https://www.raspberrypi.org/documentation/hardware/raspberrypi/spi/README.md)
     
+## Setup SSH
+
+Copy ssh ID to other computer
+
+    ssh-copy-id pi@192.168.1.100
 
 ## Automatically start programs on boot
 
