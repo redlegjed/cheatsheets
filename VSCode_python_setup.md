@@ -89,3 +89,51 @@ Snippets
 	
 ```
 
+Setting up paths 
+-----------------
+This is basically a confusing mess of settings that I just don't understand very well.
+
+The best 'documenation' I have come across is in a [Stack overflow](https://stackoverflow.com/questions/53653083/how-to-correctly-set-pythonpath-for-visual-studio-code)
+
+My understanding so far:
+
+* Creating a .env file and putting a PYTHONPATH variable in it seems to work with the Jupyter interactive interpreter. The paths must be absolute though. You can't use the ${WorkspaceFolder} variable. Example shown here
+
+```
+PYTHONPATH="/home/user/project_folder/source:/home/user/project_folder/common:/home/user/project_folder/unit_tests" 
+```
+
+* Use the _launch.json_ file to add paths for running programs using F5. The contents on _.env_ file can be added like this:
+
+```
+"env": {"PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/in_launch:${env:PYTHONPATH}"}
+```
+
+
+_launch.json_
+--------------
+
+```
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}",
+            "env": {"PYTHONPATH": "${workspaceFolder}:${workspaceFolder}/other_path:${env:PYTHONPATH}"}
+        }
+    ],
+    
+}
+
+```
+
+The line "${env:PYTHONPATH}" includes the .env file
