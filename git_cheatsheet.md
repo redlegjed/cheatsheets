@@ -10,6 +10,27 @@ Getting a Git repository from GitHub
     git clone https://github.com/redlegjed/cheatsheets.git
 
 
+Creating a git repository
+--------------------------
+
+In an existing directory
+
+    git init
+    
+This creates the .git directory and makes the directory a repository.
+
+Add a remote origin to the repository with
+
+    git remote add origin https://github.com/redlegjed/cheatsheets.git
+    
+adding another remote repository location (e.g. as a second origin)
+
+    git remote add <shortcut-name-of-second-repository> <url>
+    
+View remotes by
+
+    git remote -v
+
 
 Branches
 ------------
